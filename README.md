@@ -26,4 +26,4 @@ Use `make docker` to build the image as `webapp:latest`. You can also build with
 
 ### Run the container
 
-Use `sudo docker run -idt -p 11080:8080 webapp` to run the server in a container. 
+Use `sudo docker run -idt -p 11080:8080 webapp` to run the server in a container.
