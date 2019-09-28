@@ -32,8 +32,14 @@ func GetWeather(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func Redirect(w http.ResponseWriter, r *http.Request){
+	http.Redirect(w, r, "/current/boston", http.StatusSeeOther)
+}
+
 func main() {
 	router := mux.NewRouter()
+
+	router.HandleFunc("/", Redirect)
 	router.HandleFunc("/current/{cityName}", GetWeather)
 
 	host, port := "0.0.0.0", "8080"
